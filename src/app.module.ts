@@ -7,7 +7,12 @@ import { ProductModule } from "./product/product.module"
 import { ReviewModule } from "./review/review.module"
 
 @Module({
-  imports: [AuthModule, TopPageModule, ProductModule, ReviewModule],
+  imports: [
+    AuthModule,
+    TopPageModule,
+    ProductModule,
+    ReviewModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

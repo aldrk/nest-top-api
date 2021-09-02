@@ -3,8 +3,6 @@ import { AuthController } from "./auth.controller"
 import { TypegooseModule } from "nestjs-typegoose"
 import { AuthModel } from "./auth.model"
 
-console.log(AuthModel.prototype)
-
 @Module({
   controllers: [AuthController],
   imports: [

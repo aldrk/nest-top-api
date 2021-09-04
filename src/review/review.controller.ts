@@ -42,7 +42,6 @@ export class ReviewController {
 
   @Get("byProduct/:productId")
   async getByProduct(@Param("productId") productId: string, @UserEmail() email: string) {
-    console.log(email)
     return this.reviewService.findByProductId(productId)
   }
 

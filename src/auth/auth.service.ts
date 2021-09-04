@@ -4,7 +4,7 @@ import { InjectModel } from "nestjs-typegoose"
 import { UserModel } from "./user.model"
 import { ModelType } from "@typegoose/typegoose/lib/types"
 import { compare, genSalt, hash } from "bcryptjs"
-import { USER_NOT_FOUND_ERROR, USER_WRONG_PASSWORD_ERROR } from "./auth.constants"
+import { USER_NOT_FOUND_ERROR, USER_WRONG_AUTH_DATA_ERROR } from "./auth.constants"
 import { JwtService } from "@nestjs/jwt"
 
 @Injectable()
@@ -38,7 +38,7 @@ export class AuthService {
     const isCorrectPassword = await compare(password, user.passwordHash)
 
     if (!isCorrectPassword) {
-      throw new UnauthorizedException(USER_WRONG_PASSWORD_ERROR)
+      throw new UnauthorizedException(USER_WRONG_AUTH_DATA_ERROR)
     }
 
     return { email: user.email }

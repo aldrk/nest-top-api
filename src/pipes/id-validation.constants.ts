@@ -1,0 +1,1 @@
+export const INCORRECT_ID_ERROR = "Incorrect id format"

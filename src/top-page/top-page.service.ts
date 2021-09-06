@@ -21,6 +21,10 @@ export class TopPageService {
     return this.topPageModel.findOne({ alias }).exec()
   }
 
+  async findAll() {
+    return this.topPageModel.find({  }).exec()
+  }
+
   async update(id: string, dto: TopPageModel) {
     return this.topPageModel.findByIdAndUpdate(id, dto, { new: true }).exec()
   }
